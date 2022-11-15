@@ -1,0 +1,49 @@
+body{
+    background-image: url(book.png); height: 100vh;
+}
+.form {
+    margin: 50px auto;
+    margin-top: 20vh;
+    margin-right: 30vh;
+    width: 300px;
+    padding: 30px 25px;
+    box-sizing:border-box;
+    background-color: white;
+} 
+h1.login-title {
+    color:black ;
+    margin: 0px auto 25px;
+    font-size: 25px solid;
+    font-weight: 300;
+    text-align: center;
+}
+.login-input {
+    font-size: 15px;
+    border: 1px solid #ccc;
+    color: rgb(248, 245, 241); 
+    background-color: #AB907E;
+    padding: 10px;
+    margin-bottom: 25px;
+    height: 25px;
+    width: calc(100% - 23px);
+}
+::-webkit-input-placeholder{
+    color: #fff;
+}
+.login-input:focus {
+    border-color:#6e8095;
+    outline: none;
+}
+ .login-button {
+    color: #fff;
+    background: #744729;
+    box-sizing: border-box; 
+     border: 0;
+    outline: 0;
+    width: 50%;
+    height: 50px;
+    font-size: 16px;
+    text-align: center;
+    margin-left: 50px;
+    cursor: pointer;
+} 
