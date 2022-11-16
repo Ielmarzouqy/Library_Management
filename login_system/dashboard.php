@@ -13,9 +13,12 @@ include("auth_session.php");
 </head>
 <body>
     <div class="form">
-        <p>Hey, <?php echo $_SESSION['username']; ?>!</p>
-        <p class = bg-primary >You are in  dashboard page.</p>
-        <p><a href="logout.php">Logout</a></p>
+        <p class="title" >  Library Management    <span><a href="logout.php">Logout</a></span></p>
+            <p class="bg-info" >Hey, <?php echo $_SESSION['username']; ?>!</p>
+        <p class = bg-primary >Dashboard </p>
+        <p>Books</p>
+        <p>Profile</p>
+     
     </div>
 
 

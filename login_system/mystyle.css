@@ -1,5 +1,5 @@
 body{
-    background-image: url(book.png); height: 100vh;
+    background-image: url(book.png) ;
 }
 .form {
     margin: 50px auto;
@@ -13,17 +13,17 @@ body{
 h1.login-title {
     color:black ;
     margin: 0px auto 25px;
-    font-size: 25px solid;
+    font-size: 25px solid; 
     font-weight: 300;
     text-align: center;
-}
+ }
 .login-input {
     font-size: 15px;
     border: 1px solid #ccc;
     color: rgb(248, 245, 241); 
     background-color: #AB907E;
-    padding: 10px;
-    margin-bottom: 25px;
+    padding: 17px;
+    margin: 5px;
     height: 25px;
     width: calc(100% - 23px);
 }
@@ -47,3 +47,30 @@ h1.login-title {
     margin-left: 50px;
     cursor: pointer;
 } 
+.login-button :hover{
+    background:#AB907E;
+}
+.link {
+    color: #666;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+ .link a {
+    color: #666;
+}
+h3 {
+    font-weight: normal;
+    text-align: center;
+} 
+.login-form #email_error,
+.login-form #pass_error{
+    margin-left: 5px;
+    font-size: 12px;
+    color: #f21212;
+    /* background-color: #fcd3d3; */
+    padding: 1px ;
+    border-radius: 3px;
+    display: none; 
+}

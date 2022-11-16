@@ -38,13 +38,15 @@
     } else {
 ?>
     
-   <div class="BG"  >
-    <form class="form bg-image"action="" method="post">
+   <div class="login-form"  >
+    <form class="form "action="" method="post">
         <div  ></div>
         <h1 class="login-title">Registration</h1>
         <input type="text" class="login-input" name="username" placeholder="Username" required />
-        <input type="text" class="login-input" name="email" placeholder="Email Adress">
+        <input type="text" class="login-input" name="email" placeholder="Email Adress" >
+        <div id="email_error">Please fill up your email</div>
         <input type="password" class="login-input " name="password" placeholder="Password">
+        <div id="pass_error">Please fill up your password</div>
         <input type="submit" name="submit" value="Register" class=" login-button">
         <!-- <button class="btn btn-success" type="submit" name="submit" value="Register" class="btn login-button">Register</button> -->
 
@@ -54,5 +56,6 @@
 <?php
     }
 ?>
+    <script src="valid.js"></script>
 </body>
 </html>
