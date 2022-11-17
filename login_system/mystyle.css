@@ -1,10 +1,74 @@
-body{
+/* body{
     background-image: url(book.png) ;
+}  */
+
+
+img{
+    height: 445px;
+    width: 456px;
+}
+.text{
+    color: #f21212;
+}
+.content h1{
+    font-size: 50px;
+    font-weight: 400;
+    margin-top: 1px;
+    margin-bottom: 26px;
+    color: #1d3d66;
+    white-space: nowrap;
+}
+.content p{
+    font-size: 20px;
+    color: #6a7199;
+}
+.content{
+    /* margin-left: 1px; */
+    margin-top: 10%;
+    /* display: flex; */
+
+}
+.content .btn{
+    display: inline-block;
+    background: linear-gradient(45deg, #7eb2fc, #ffb338);
+    border-radius: 6px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 3px 8px 22px rgba(94,28,68,0.15);
+}
+.home{
+    height: 100vh;
+    width: 100%;
+    /* background-image:url(img/background.png); */
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+    /* display: flex; */
+}
+
+nav{
+    flex: 1;
+    padding-left: 6px;
+    white-space: nowrap;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 20px;
+}
+nav ul li a{ 
+    text-decoration: none;
+    color: #333;
 }
 .form {
     margin: 50px auto;
-    margin-top: 20vh;
-    margin-right: 30vh;
+    margin-top: 20%;
+    margin-right: 30%;
     width: 300px;
     padding: 30px 25px;
     box-sizing:border-box;
@@ -74,3 +138,4 @@ h3 {
     border-radius: 3px;
     display: none; 
 }
+/* home page style*/
