@@ -61,7 +61,9 @@ require 'connectdb.php';
                                     <td> <?=$book['pages']?></td>
                                     <td>
                                         <a href="book_edit.php?id=<?= $book['id'] ?>"class="btn btn-success btn-sm">Edit</a>
-                                        <a href=""class="btn btn-danger btn-sm">Delete</a>
+                                        <form action="addbook" method="POST" class="d-inline">
+                                        <button type="submit" name="delete_book" value="<?=$book['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
                                     </td>
                                   </tr>  
                                 <?php

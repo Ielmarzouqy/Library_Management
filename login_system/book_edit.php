@@ -1,5 +1,6 @@
 <?php 
 include "sidebar.php";
+require 'connectdb.php';
 ?>
 
 <!doctype html>
@@ -31,32 +32,53 @@ include "sidebar.php";
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form action="addbook.php" method="POST" enctype="multipart/form-data">
+                    <?php
+                    if(isset($_GET['id'])){
+                      $book_id = mysqli_real_escape_string( $conn, $_GET['id']); 
+                        $query = "SELECT *FROM books WHERE id = '$book_id'";
+                        $query_run = mysqli_query($conn, $query);
 
-                        <!-- <div class="mb-3">
-                            <label>Picture</label>
-                            <input type="text" name="img" class="form-control">
-                        </div>    -->
-                        <label>Choose image <br> </label>
-                        <div>
-                                <input type="file" name="my_img">
-                         </div> 
-                        <div class="mb-3">
-                            <label>Title</label>
-                            <input type="text" name="title" class="form-control">
-                        </div>   
-                        <div class="mb-3">
-                            <label>Author</label>
-                            <input type="text" name="author" class="form-control">
-                        </div>   
-                        <div class="mb-3">
-                            <label>Pages</label>
-                            <input type="text" name="pages" class="form-control">
-                        </div>                    
-                       <div class="mb-3">
-                        <button type="submit" name="update_book" class="btn btn-primary">Update Book</button>
-                       </div>
-                    </form>
+                        if(mysqli_num_rows($query_run) > 0){
+                            $book = mysqli_fetch_array($query_run);
+                            // print_r($book);
+                             ?>
+                   
+                            <form action="addbook.php" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="book_id"value="<?= $book['id'];?>">
+                                <!-- <div class="mb-3">
+                                    <label>Picture</label>
+                                    <input type="text" name="img" class="form-control">
+                                </div>    -->
+                                <label>Choose image <br> </label>
+                                <div>
+                                        <input type="file" name="my_img">
+                                </div> 
+                                <div class="mb-3">
+                                    <label>Title</label>
+                                    <input type="text" name="title" value="<?= $book['title'];?>" class="form-control">
+                                </div>   
+                                <div class="mb-3">
+                                    <label>Author</label>
+                                    <input type="text" name="author"  value="<?= $book['author_name'];?>" class="form-control">
+                                </div>   
+                                <div class="mb-3">
+                                    <label>Pages</label>
+                                    <input type="text" name="pages"  value="<?= $book['pages'];?>" class="form-control">
+                                </div>                    
+                            <div class="mb-3">
+                                <button type="submit" name="update_book" class="btn btn-primary">Update Book</button>
+                            </div>
+                            </form>
+
+                            <?php
+
+
+                        }else{
+                            echo "<h4>No Such Id Found</h4>";
+                        }
+
+                    }
+                    ?>
                 </div>
             </div>
         </div>

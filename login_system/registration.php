@@ -26,27 +26,30 @@
                      VALUES ('$username', '" . md5($password) . "', '$email')";
         $result   = mysqli_query($conn, $query);
         if ($result) {
-            echo "<div class='form'>
-                  <h3>You are registered successfully.</h3><br/>
-                  <p class='link'>Click here to <a href='login.php'>Login</a></p>
-                  </div>";
-        } else {
-            echo "<div class='form'>
-                  <h3>Required fields are missing.</h3><br/>
-                  <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
-                  </div>";
+            // echo "<div class='form'>
+            //       <h3>You are registered successfully.</h3><br/>
+            //       <p class='link'>Click here to <a href='login.php'>Login</a></p>
+            //       </div>";
+        } 
+        else {
+            // echo "<div class='form'>
+            //       <h3>Required fields are missing.</h3><br/>
+            //       <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
+            //       </div>";
+                //   header('Location: registration.php');
+
         }
     } else {
 ?>
     
    <div class="login-form"  >
-    <form class="form "action="" method="post">
+    <form class="form "action="registration.php" method="post" id="form">
         <div  ></div>
         <h1 class="login-title">Registration</h1>
-        <input type="text" class="login-input" name="username" placeholder="Username" required />
-        <input type="email" class="login-input" name="email" placeholder="Email Adress" required >
-        <input type="password" class="login-input " name="password" placeholder="Password" required>
-        <input type="submit" name="submit" value="Register" class=" login-button">
+        <input type="text" class="login-input" name="username" placeholder="Username"  id="userName"/>
+        <input type="email" class="login-input" name="email" placeholder="Email Adress"  id="email"/>
+        <input type="password" class="login-input " name="password" placeholder="Password"  id="password"/>
+        <input type="submit" name="submit" value="Register" class=" login-button" id="button">
         <!-- <button class="btn btn-success" type="submit" name="submit" value="Register" class="btn login-button">Register</button> -->
 
         <p class="link">Already have an account? <a href="login.php">Login here</a></p>
@@ -55,6 +58,26 @@
 <?php
     }
 ?>
-    <script src="valid.js"></script>
+    <!-- <script src="valid.js"></script> -->
+
+    <script>
+        var form = document.getElementById('form')
+        var name = document.getElementById('userName')
+        var email = document.getElementById('email')
+        var password = document.getElementById('password')
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            formValidate()
+        })
+
+        function formValidate(){
+            const nameValue = name.value.trim()
+            if(nameValue === ''){
+                console.log('llllllll')
+            }
+        }
+
+    </script>
 </body>
 </html>

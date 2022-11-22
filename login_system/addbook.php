@@ -1,5 +1,8 @@
 <?php
-    include "dashboard.php";?>
+    // include "dashboard.php";
+    // session_start();
+    
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +15,24 @@
 <body>
     <?php
     require 'connectdb.php';
+    // if(isset($_OPST['delete_book'])){
+    //     $book_id = mysqli_real_escape_string($conn, $_POST['delete_book']);
+
+    //     $query = "DELETE FROM books WHERE id='$book_id'";
+    //     $query_run = mysqli_query($conn, $query);
+    // }
+
+    if(isset($_POST['update_book'])){
+        $book_id = mysqli_real_escape_string($conn, $_POST['book_id']);
+        $title = mysqli_real_escape_string($conn, $_POST['title']);
+        $author = mysqli_real_escape_string($conn, $_POST['author']);
+        $pages = mysqli_real_escape_string($conn, $_POST['pages']);
+
+        $query = "UPDATE  books SET title =' $title', author_name ='$author', pages = '$pages' 
+                    WHERE id=$book_id";
+        $query_run = mysqli_query($conn,$query);
+        header("Location: viewbooks.php");
+    }
     // session_start();
     if(isset($_POST['save_book'])){
         $img_name = $_FILES['my_img']['name'];
