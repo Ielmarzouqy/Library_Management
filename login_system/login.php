@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8"/>
     <title>Login</title>
-    <link rel="stylesheet" href="mystyle.css"/>
+    <link rel="stylesheet" href="style/mystyle.css"/>
 </head>
-<body>
+<body style=" background: url(img/book.png);
+    height:100vh;">
 <?php
     require('connectdb.php');
     session_start();
@@ -20,8 +21,10 @@
                      AND password='" . md5($password) . "'";
         $result = mysqli_query($conn, $query) ;
         $rows = mysqli_num_rows($result);
+        $data = mysqli_fetch_assoc($result);
         if ($rows == 1) {
             $_SESSION['username'] = $username;
+            $_SESSION['id_admin'] = $data['id'];
             // Redirect to user dashboard page
             header("Location: dashboard.php");
         } else {
@@ -32,21 +35,18 @@
         }
     } else {
 ?>  
-    <div class= "login-form">
-        <form class="form" method="post" name="login">
+    <div class= "form">
+        <form class="formLogin" method="post" name="login">
             <h1 class="login-title">Login</h1>
             <input type="text" class="login-input" name="username" placeholder="Username" autofocus="true"/>
-            <div id="admin_error"> please full up your user name</div>
             <input type="password" class="login-input" name="password" placeholder="Password"/>
-            <div id="pass_error"> please full up your passeword</div>
             <input type="submit" value="Login" name="submit" class="login-button"/>
-            <p class="link">Don't have an account? <a href="registration.php">Registration Now</a></p>
+            <p class="link">If you don't have an account <br> <a href="registration.php">Registration Now</a></p>
         </form>
     </div>
 <?php
     }
 ?>
-    <script src="valid.js"></script>
 </body>
 </html>
 

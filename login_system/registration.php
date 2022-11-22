@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8"/>
     <title>Registration</title>
-    <link rel="stylesheet" href="mystyle.css"/>
+    <link rel="stylesheet" href="style/mystyle.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
-<body >
+<body style=" background: url(img/book.png);
+    height:100vh;">
 <?php
     require('connectdb.php');
     // When form submitted, insert values into the database.
@@ -44,9 +45,7 @@
         <h1 class="login-title">Registration</h1>
         <input type="text" class="login-input" name="username" placeholder="Username" required />
         <input type="email" class="login-input" name="email" placeholder="Email Adress" required >
-        <div id="email_error">Please fill up your email</div>
         <input type="password" class="login-input " name="password" placeholder="Password" required>
-        <div id="pass_error">Please fill up your password</div>
         <input type="submit" name="submit" value="Register" class=" login-button">
         <!-- <button class="btn btn-success" type="submit" name="submit" value="Register" class="btn login-button">Register</button> -->
 
