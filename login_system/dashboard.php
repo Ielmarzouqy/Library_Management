@@ -20,19 +20,21 @@ include("sidebar.php");
 </head>
 <body>
     <div class="home_content">
-        <div class="text">Library Management System</div>
-        <div class="statistic text-white ">
-            <div class="  col-xl-4 col-lg-6 ms-3 p-2 border Books">
-                <h4 class="ms-3">BOOKS</h4>
-                <span>count <br></span>
-                <a href="viewbooks.php">see more</a>
-                <img class="" src="img/book-fair.png" alt="">
+        <div class="row">
+            <div class="text ">Library Management System</div>
+            <div class="statistic text-white ">
+                <div class="  col-xl-12 col-lg-6 ms-3 p-2 border Books">
+                    <h4 class="ms-3">BOOKS</h4>
+                    <span>count <br></span>
+                    <a href="viewbooks.php">see more</a>
+                    <img class="" src="img/book-fair.png" alt="">
+                </div>
+                <!-- <div class="  col-xl-4 col-lg-6 m-3 p-5 border newspaper">
+                    <h4 class=" ">Newspaper</h4>
+                    <span>count <br></span>
+                    <a href="books.php">see more</a>
+                </div> -->
             </div>
-            <!-- <div class="  col-xl-4 col-lg-6 m-3 p-5 border newspaper">
-                <h4 class=" ">Newspaper</h4>
-                <span>count <br></span>
-                <a href="books.php">see more</a>
-            </div> -->
         </div>  
     </div>
 </body>

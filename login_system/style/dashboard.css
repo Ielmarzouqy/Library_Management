@@ -1,6 +1,6 @@
-body{
+/* body{
     background-image: url("/img/book.png");
-}
+} */
 /* google font CDN link */
 @import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
 *{
@@ -265,6 +265,6 @@ body{
     width: calc(100% - 240px);
     left: 240px;
 }
-.form{
-    left: 50%;
-}
+/* .form{ */
+    /* left: 50%; */
+/* } */

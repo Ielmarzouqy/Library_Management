@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <div class="home">
+    <div class="home container-fluid">
         <!-- <div class="navbar"> -->
             <!-- <img src="img/logo.png" class="logo"> -->
             <nav>

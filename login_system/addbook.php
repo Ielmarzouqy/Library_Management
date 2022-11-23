@@ -1,7 +1,9 @@
 <?php
     // include "dashboard.php";
     // session_start();
-    
+
+use function PHPSTORM_META\map;
+
     ?>
 
 <!DOCTYPE html>
@@ -15,12 +17,25 @@
 <body>
     <?php
     require 'connectdb.php';
-    // if(isset($_OPST['delete_book'])){
-    //     $book_id = mysqli_real_escape_string($conn, $_POST['delete_book']);
+    if(isset($_POST['delete_book'])){
+        $book_id = $_POST['book_id1'];
 
-    //     $query = "DELETE FROM books WHERE id='$book_id'";
-    //     $query_run = mysqli_query($conn, $query);
-    // }
+        $query = "DELETE FROM books WHERE id= '$book_id' ";
+        $query_run = mysqli_query($conn, $query);
+        header("location: viewbooks.php");
+
+        // if($query_run){
+        //     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        //     <strongdelet secceful</strong>
+        //     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        //     </div>';
+        // }else{
+        //     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        //     <strong>wrong delete</strong>
+        //     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        //     </div>';
+        // }
+    }
 
     if(isset($_POST['update_book'])){
         $book_id = mysqli_real_escape_string($conn, $_POST['book_id']);
@@ -33,8 +48,8 @@
         $query_run = mysqli_query($conn,$query);
         header("Location: viewbooks.php");
     }
-    // session_start();
     if(isset($_POST['save_book'])){
+        session_start();
         $img_name = $_FILES['my_img']['name'];
         $img_size = $_FILES['my_img']['size'];
         $tmp_name = $_FILES['my_img']['tmp_name'];
@@ -59,6 +74,14 @@
                     $new_img_name = uniqid("IMG-", true).'.'.$img_et_lc;
                     $img_upload_path = 'img/'.$new_img_name;
                     move_uploaded_file($tmp_name, $img_upload_path);
+
+        
+                    $query = "INSERT INTO books (img_url, title, author_name, pages, admin_id) VALUES
+                    ('$new_img_name', '$title', '$author', '$pages', $id)";
+    
+            $query_run = mysqli_query($conn, $query);
+            header('Location: viewbooks.php');
+
                 }else{
                     echo "You can't upload files of this type";
                     // header("location: index.php?error=$em");
@@ -70,15 +93,18 @@
             // header("location: books.php?error=$em");
     
         }
-     }
-        $query = "INSERT INTO books (img_url, title, author_name, pages, id_admin) VALUES
-                ('$new_img_name', '$title', '$author', '$pages', $id)";
-
-        $query_run = mysqli_query($conn, $query);
         // if($query_run)
         // {
-        //     header
+        //         $_SESSION['message'] = "Book Created Successfully";            
+        //         header("Location: creatb.php");
+        //         exit(0);
         // }
+        // else{
+        //     $_SESSION['message'] = "Book Not Created ";            
+        //     header("Location: creatb.php");
+        //     exit(0);
+        // }
+     }
 
     
 

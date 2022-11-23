@@ -10,12 +10,11 @@ require 'connectdb.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <link rel="stylesheet" href="style/mystyle.css"> -->
   <link rel="stylesheet" href="style/dashboard.css">
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
   <title>Document</title>
 </head>
-<body>
+<body style="overflow-y:auto">
         <!-- <div class="table-responsive  "> -->
 
         <div class="me-4 ms-5">
@@ -60,9 +59,10 @@ require 'connectdb.php';
                                     <td> <?=$book['author_name']?></td>
                                     <td> <?=$book['pages']?></td>
                                     <td>
-                                        <a href="book_edit.php?id=<?= $book['id'] ?>"class="btn btn-success btn-sm">Edit</a>
-                                        <form action="addbook" method="POST" class="d-inline">
-                                        <button type="submit" name="delete_book" value="<?=$book['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                        <a href="book_edit.php?id=<?=$book['id'] ?>"class="btn btn-success btn-sm">Edit</a>
+                                        <form action="addbook.php" method="POST" class="d-inline">
+                                          <input type="hidden" name="book_id1" value="<?= $book['id'];?>">
+                                          <button name="delete_book" type="submit" class="btn btn-danger btn-sm">Delete</button>
                                         </form>
                                     </td>
                                   </tr>  

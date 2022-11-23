@@ -44,7 +44,7 @@ require 'connectdb.php';
                              ?>
                    
                             <form action="addbook.php" method="POST" enctype="multipart/form-data">
-                                    <input type="hidden" name="book_id"value="<?= $book['id'];?>">
+                                    <input type="hidden" name="book_id" value="<?= $book['id'];?>">
                                 <!-- <div class="mb-3">
                                     <label>Picture</label>
                                     <input type="text" name="img" class="form-control">
