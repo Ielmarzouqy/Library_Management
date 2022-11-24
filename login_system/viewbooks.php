@@ -1,6 +1,6 @@
 <?php
 require 'connectdb.php';
-// include("sidebar.php");
+
 ?>
 <!doctype html>
 <html lang="en"><html lang="en">
@@ -16,28 +16,25 @@ require 'connectdb.php';
 </head>
 <body style="overflow-y:auto">
         <!-- <div class="table-responsive  "> -->
-
-        <div class="me-4 ms-5">
-            <table class="table table-white">
-              <thead>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="card">
-                      <div class="card-header mt-4 ">
+          <!-- <div class="me-4 ms-5"> -->
+             <?php include("sidebar.php"); ?>
+             <!-- <div class="card">
+                      <div class="card-header mt-4 col-sm-9 ">
                         
                         <h4 > Book Details 
                         <a href="creatb.php" class="btn btn-primary float-end ">Add book</a>
                         </h4>
                       
-                      </div>
-                      </div>
                     </div>
-                  </div>
-                </div>
-                
-              </thead>
-                <tbody>
+              </div> -->
+              <div>
+                <a href="creatb.php" class="btn btn-primary text-center text-small">Add book</a>
+              </div>
+                <div class="container-fluid">
+                  <div class="row justify-content-center">
+                    <div class="col-md-8 col8">
+                      <table class="table table-white">
+              <thead>
                 <tr>
                     <th class="text-" scope="col">Picture</th>
                     <th class="text-" scope="col">Book title</th>
@@ -45,6 +42,9 @@ require 'connectdb.php';
                     <th class="text-" scope="col">Pages</th>
                     <th class="text-" scope="col">Action</th>
                   </tr>
+              </thead>
+                <tbody>
+                
                   <?php
                         $query = "SELECT * FROM books";
                         $query_run = mysqli_query($conn, $query);
@@ -71,8 +71,12 @@ require 'connectdb.php';
                               ?>
                 </tbody>
               </table>
-            </div>
-      </table>
+                    </div>
+                  </div>
+                </div>
+              
+            <!-- </div> -->
+      <!-- </table> -->
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
   </body>

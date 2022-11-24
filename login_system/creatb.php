@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "sidebar.php";
 // session_start();
 
@@ -6,7 +6,8 @@ include "sidebar.php";
 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin dashboard</title>
@@ -22,53 +23,53 @@ include "sidebar.php";
 
 
 </head>
-<body>
-        <!-- ass="home_content" style="display: none;"></div> --> -->
-<div class="form ms-5 mt-5">
 
-<?php include('message.php'); ?>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Add book
-                        <a href="viewbooks.php" class="btn btn-danger float-end">Back</a>
-                    </h4>
-                </div>
-                <div class="card-body">
-                    <form action="addbook.php" method="POST" enctype="multipart/form-data">
+<body class="p-0 m-0" style="overflow-y: auto;">
+    <!-- ass="home_content" style="display: none;"></div> -->
 
-                        <!-- <div class="mb-3">
-                            <label>Picture</label>
-                            <input type="text" name="img" class="form-control">
-                        </div>    -->
-                        <label>Choose image <br> </label>
-                        <div>
-                                <input type="file" name="my_img">
-                         </div> 
-                        <div class="mb-3">
-                            <label>Title</label>
-                            <input type="text" name="title" class="form-control">
-                        </div>   
-                        <div class="mb-3">
-                            <label>Author</label>
-                            <input type="text" name="author" class="form-control">
-                        </div>   
-                        <div class="mb-3">
-                            <label>Pages</label>
-                            <input type="text" name="pages" class="form-control">
-                        </div>                    
-                       <div class="mb-3">
-                        <button type="submit" name="save_book" class="btn btn-primary">Save Book</button>
-                       </div>
-                    </form>
+
+        <?php include('message.php'); ?>
+
+            <!-- <div class="col-md-8  col-xs-12"> -->
+
+
+            <div class="row d-flex flex-column justify-content-center">
+                <div class="d-flex justify-content-between ps-3 mb-2 col-12 col-lg-6 col-md-6">
+                    <h4>Add book</h4>
+                    <a href="viewbooks.php" class="btn btn-danger">Back</a>
                 </div>
+            
+
+                <form action="addbook.php" method="POST" enctype="multipart/form-data" class="col-12 col-lg-6 col-md-6">
+
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Choose image</label>
+                    <input type="file" class="form-control-file" name="my_img">
+                </div>
+
+                    <div class="form-group">
+                        <label >Title</label>
+                        <input type="text" class="form-control" name="title" aria-describedby="emailHelp" placeholder="title">
+                    </div>                
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Author</label>
+                        <input type="text" class="form-control" name="author"  aria-describedby="emailHelp" placeholder="Author">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Pages</label>
+                        <input type="text"name="pages" class="form-control" id="exampleInputPassword1" placeholder="Pages">
+                    </div>
+                    
+                
+                 <button type="submit" name="save_book" class="btn btn-primary">Save Book</button>
+
+                    
+                </form>
+
             </div>
-        </div>
-    </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 </body>
+
 </html>

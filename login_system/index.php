@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
-<body>
+<body style="min-height: 100vh; background: url(img/feature-img.jpg) no-repeat fixed; background-size: 70vh; background-position: right bottom;">
     <div class="home container-fluid">
         <!-- <div class="navbar"> -->
             <!-- <img src="img/logo.png" class="logo"> -->
@@ -25,6 +25,7 @@
                     <li><a href="">Contact</a></li>
                 </ul>
             </nav>
+           
             <!-- <img src="img/cart.png" class="cart"> -->
             <div class="d-flex content">
                 <div class="">
@@ -32,11 +33,12 @@
                     <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br></p>
                     <a href="registration.php" class="btn">Regitration now <br></a>
                     <a href="login.php" class="btn">Log in</a>
-
                 </div>
-                <div class="feature-img">
-                <img src="img/feature-img.jpg"   alt="">
-                </div>
+                <!-- <div>
+                <img style="width: ;" src="img/feature-img.jpg"   alt="">
+                </div> -->
+                <!-- <div class="feature-img">
+                </div> -->
             </div>
         <!-- </div> -->
     </div> 

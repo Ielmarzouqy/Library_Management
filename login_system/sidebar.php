@@ -22,19 +22,19 @@ include("auth_session.php");
     <div class="sidebar">
         <div class="logo_content">
             <div class="logo">
-                <i class='bx bx-book'></i>
+               <a href="index.php"> <i class='bx bx-book'></i></a>
                 <div class="logo_name">Library </div>
             </div>
             <i class='bx bx-menu' id="btn"></i>
         </div>
         <ul class="nav_list">
-            <li>
+            <!-- <li>
                 <i class='bx bx-search'></i>
                     <input type="text" placeholder="Search ">
                 <span class="tooltip">Search</span>
-            </li>
+            </li> -->
             <li>
-                <a href="#">
+                <a href="dashboard.php">
                     <i class='bx bx-grid-alt'></i>  
                     <span class="links_name">Dashboard</span>
                 </a>
@@ -71,16 +71,19 @@ include("auth_session.php");
         </div>
     </div>
 
-    <!-- <div class="home_content">
-        <div class="text">Library Management System</div>
-        <div class="statistic text-white ">
+    <div class="home_content">
+        <div class="row d-block px-4 ti">
+            <div class="text ">Library Management System</div>
+     <!-- <div class="home_content"> -->
+        <!-- <div class="text">Library Management System</div> -->
+        <!-- <div class="statistic text-white ">
             <div class="  col-xl-4 col-lg-6 ms-3 p-2 border Books">
                 <h4 class="ms-3">BOOKS</h4>
                 <span>count <br></span>
                 <a href="viewbooks.php">see more</a>
                 <img class="" src="img/book-fair.png" alt="">
 
-            </div> -->
+            </div>  -->
         
     
             <!-- <div class="  col-xl-4 col-lg-6 m-3 p-5 border newspaper">

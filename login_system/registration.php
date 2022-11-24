@@ -10,6 +10,11 @@
 </head>
 
 <body class="register">
+
+<?php
+    require('connectdb.php');
+    
+?>
     <?php
     require('connectdb.php');
     // When form submitted, insert values into the database.
@@ -27,16 +32,16 @@
                      VALUES ('$username', '" . md5($password) . "', '$email')";
         $result   = mysqli_query($conn, $query);
         if ($result) {
-            // echo "<div class='form'>
-            //       <h3>You are registered successfully.</h3><br/>
-            //       <p class='link'>Click here to <a href='login.php'>Login</a></p>
-            //       </div>";
+            echo "<div class='form'>
+                  <h3>You are registered successfully.</h3><br/>
+                  <p class='link'>Click here to <a href='login.php'>Login</a></p>
+                  </div>";
         } else {
-            // echo "<div class='form'>
-            //       <h3>Required fields are missing.</h3><br/>
-            //       <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
-            //       </div>";
-            //   header('Location: registration.php');
+            echo "<div class='form'>
+                  <h3>Required fields are missing.</h3><br/>
+                  <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
+                  </div>";
+              header('Location: registration.php');
 
         }
     } else {

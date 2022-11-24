@@ -21,8 +21,8 @@ require 'connectdb.php';
 
 </head>
 <body>
-        <!-- ass="home_content" style="display: none;"></div> --> -->
-<div class="form ms-5 mt-5">
+        <!-- ass="home_content" style="display: none;"></div> --> 
+<div style ="overflow-y:auto" class="form ms-5 mt-5">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
